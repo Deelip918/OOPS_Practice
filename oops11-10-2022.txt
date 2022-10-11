@@ -1,0 +1,92 @@
+Q1. Getter Setter(if any member of class is private then getter is used to access it)
+
+class GetSetDemo(private var age : Int, var name : String)
+{
+	def printAge() {
+		println("Age is : " + age)
+	}
+}
+object MainObject
+{
+	def main(args : Array[String]) {
+		var s = new GetSetDemo(25, "Mark Smith")
+		s.printAge
+		println("Name is : " + s.name)
+	}
+}
+
+Q2. creating Programmer class which extends class Employee
+
+class Employee {  
+    var salary : Float = 10000  
+}  
+
+class Programmer extends Employee {
+    var bonus : Float = 5000
+    println("Salary from parent class : " + salary)  
+    println("Bonus from chil	d class : " + bonus)  
+}  
+
+object MainObject {  
+    def main(args:Array[String]) {  
+        new Programmer()  
+    }  
+}
+Q3. scala program for method overloading same name different parameter 
+
+ class Arithmetic {
+    def add(a : Int, b : Int) {
+        var sum = a+b  
+        println("Sum is two int number : " + sum)  
+    }
+    def add(a : Int, b : Int, c : Int) {
+        var sum = a+b+c  
+        println("Sum of three int number : " + sum)  
+    }
+    def add(a : Double, b : Double){ 
+        var sum = a+b  
+        println("Sum is two double number : " + sum)
+    }  
+}  
+object MainObject { 
+    def main(args : Array[String]) {  
+        var a  = new Arithmetic()
+        a.add(10, 10)
+        a.add(10, 10, 10)
+        a.add(10.0, 10.0) 
+    }  
+}
+
+Q4. overriding 
+
+class Bank {
+    def getRateOfInterest() = {  
+    	0  
+    }    
+}    
+class SBI extends Bank {    
+    override def getRateOfInterest() = {  
+    	8  
+    }    
+}    
+
+class ICICI extends Bank {    
+    override def getRateOfInterest() = {  
+    	7
+    }    
+}     
+class AXIS extends Bank {    
+    override def getRateOfInterest() = {  
+    	9  
+    }    
+}       
+object MainObject {   
+    def main(args : Array[String]) {
+    var s=new SBI();    
+    var i=new ICICI();    
+    var a=new AXIS(); 
+    println("SBI Rate of Interest: " + s.getRateOfInterest() + "%")    
+    println("ICICI Rate of Interest: "+ i.getRateOfInterest() + "%")    
+    println("AXIS Rate of Interest: " + a.getRateOfInterest() + "%")    
+    }    
+} 
